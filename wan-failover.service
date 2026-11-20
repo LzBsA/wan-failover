@@ -1,0 +1,8 @@
+[Unit]
+Description=WAN failover (primary <-> 4G backup)
+After=network-online.target
+
+[Service]
+Type=oneshot
+EnvironmentFile=-/etc/wan-failover.env
+ExecStart=/usr/local/bin/wan-failover.sh
